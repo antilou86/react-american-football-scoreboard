@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import BottomRow from "./BottomRow";
+import Buttons from "./Buttons";
 
 
 function App() {
@@ -11,25 +12,6 @@ function App() {
   const [downValue, setDownValue] = useState(0);
   const [quarterValue, setQuarterValue] = useState(0);
   
-  const scoreHandler = (team, scoreChange) => {
-    if (team == 'home') {
-      if (scoreChange == 'touchdown') {
-        return homeScore + 7;
-      } else if (scoreChange == 'field goal') {
-        return homeScore + 3;
-      } else {
-        alert = 'Invalid score type. Please enter "touchdown" or "field goal"'
-      }
-    } else {
-      if (scoreChange == 'touchdown') {
-        return awayScore + 7;
-      } else if (scoreChange == 'field goal') {
-        return awayScore + 3;
-      } else {
-        alert = 'Invalid score type. Please enter "touchdown" or "field goal"'
-      }
-    }
-  }
 
   return (
     <div className="container">
@@ -50,22 +32,7 @@ function App() {
         </div>
         <BottomRow downValue={downValue} quarterValue={quarterValue}/>
       </section>
-      <section className="buttons">
-        <div className="homeButtons">
-          {/* TODO STEP 4 - Now we need to attach our state setter functions to click listeners. */}
-          <button className="homeButtons__touchdown" onClick={()=> setHomeScore(scoreHandler('home', 'touchdown'))}>Home Touchdown</button>
-          <button className="homeButtons__fieldGoal" onClick={()=> setHomeScore(scoreHandler('home', 'field goal'))}>Home Field Goal</button>
-        </div>
-        <div className="awayButtons">
-          <button className="awayButtons__touchdown"  onClick={()=> setAwayScore(scoreHandler('away', 'touchdown'))}>Away Touchdown</button>
-          <button className="awayButtons__fieldGoal"  onClick={()=> setAwayScore(scoreHandler('away', 'field goal'))}>Away Field Goal</button>
-        </div>
-        <div className="homeButtons">
-          <button className="awayButtons__touchdown"  onClick={()=> setDownValue( downValue == 4 ? downValue - 4 : downValue + 1)}>Down Change</button>
-          <button className="awayButtons__fieldGoal"  onClick={()=> setQuarterValue( quarterValue == 4 ? quarterValue - 4 : quarterValue + 1)}>Quarter Change</button>
-        </div>
-        
-      </section>
+      <Buttons downValue={downValue} quarterValue={quarterValue} homeScore = {homeScore} awayScore={awayScore} setAwayScore = {setAwayScore} setDownValue = {setDownValue} setHomeScore = {setHomeScore} setQuarterValue={setQuarterValue} />
     </div>
   );
 }
