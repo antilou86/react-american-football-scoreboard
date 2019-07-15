@@ -23,19 +23,19 @@ const Buttons = props => {
       }
     return (
         <section className="buttons">
-        <div className="homeButtons">
-          {/* TODO STEP 4 - Now we need to attach our state setter functions to click listeners. */}
-          <button className="homeButtons__touchdown" onClick={()=> props.setHomeScore(scoreHandler('home', 'touchdown'))}>Home Touchdown</button>
-          <button className="homeButtons__fieldGoal" onClick={()=> props.setHomeScore(scoreHandler('home', 'field goal'))}>Home Field Goal</button>
-        </div>
-        <div className="awayButtons">
-          <button className="awayButtons__touchdown"  onClick={()=> props.setAwayScore(scoreHandler('away', 'touchdown'))}>Away Touchdown</button>
-          <button className="awayButtons__fieldGoal"  onClick={()=> props.setAwayScore(scoreHandler('away', 'field goal'))}>Away Field Goal</button>
-        </div>
-        <div className="homeButtons">
-          <button className="awayButtons__touchdown"  onClick={()=> props.setDownValue( props.downValue == 4 ? props.downValue - 4 : props.downValue + 1)}>Down Change</button>
-          <button className="awayButtons__fieldGoal"  onClick={()=> props.setQuarterValue( props.quarterValue == 4 ? props.quarterValue - 4 : props.quarterValue + 1)}>Quarter Change</button>
-        </div>
+            <div className="homeButtons">
+            {/* TODO STEP 4 - Now we need to attach our state setter functions to click listeners. */}
+                <button className="homeButtons__touchdown" onClick={()=> props.setHomeScore(scoreHandler('home', 'touchdown'))}>Home Touchdown</button>
+                <button className="homeButtons__fieldGoal" onClick={()=> props.setHomeScore(scoreHandler('home', 'field goal'))}>Home Field Goal</button>
+            </div>
+            <div className="awayButtons">
+                <button className="awayButtons__touchdown"  onClick={()=> props.setAwayScore(scoreHandler('away', 'touchdown'))}>Away Touchdown</button>
+                <button className="awayButtons__fieldGoal"  onClick={()=> props.setAwayScore(scoreHandler('away', 'field goal'))}>Away Field Goal</button>
+            </div>
+            <div className="homeButtons">
+                <button className="awayButtons__touchdown"  onClick={()=> props.setDownValue( props.downValue == 4 ? props.downValue - 3 : props.downValue + 1)}>Down Change</button>
+                <button className="awayButtons__fieldGoal"  onClick={()=> props.setQuarterValue( props.quarterValue == 4 ? props.quarterValue - 3 : props.quarterValue + 1)}>Quarter Change</button>
+            </div>
         </section>
         )
 }

@@ -9,8 +9,8 @@ function App() {
   //TODO: STEP 2 - Establish your applictaion's state with some useState hooks.  You'll need one for the home score and another for the away score.
   const [homeScore, setHomeScore] = useState(32);
   const [awayScore, setAwayScore] = useState(32);
-  const [downValue, setDownValue] = useState(0);
-  const [quarterValue, setQuarterValue] = useState(0);
+  const [downValue, setDownValue] = useState(1);
+  const [quarterValue, setQuarterValue] = useState(1);
   
 
   return (
